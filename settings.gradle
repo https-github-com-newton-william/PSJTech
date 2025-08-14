@@ -1,0 +1,4 @@
+rootProject.name = 'psj-tech'
+def projectDirs = ['services']
+
+include 'notLike'
