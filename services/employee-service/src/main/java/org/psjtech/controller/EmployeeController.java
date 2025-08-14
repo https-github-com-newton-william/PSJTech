@@ -21,7 +21,7 @@ public class EmployeeController {
 
     @GetMapping("/all")
     public List<Employee> getAllEmployee() {
-        log.info("Gell All Employee data request received.");
+        log.info("Get All Employee data request received.");
         return employeeService.getAll();
     }
 
