@@ -7,7 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.psjtech.Entity.Employee;
 import org.psjtech.response.ApiResponse;
 import org.psjtech.service.EmployeeService;
-import org.springframework.http.ResponseEntity;
+import org.psjtech.service.KafkaProducerService;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -19,6 +19,7 @@ import java.util.List;
 @Slf4j
 public class EmployeeController {
     private final EmployeeService employeeService;
+    private final KafkaProducerService kafkaProducerService;
 
     /**
      * Retrieves a list of all employees.
@@ -72,4 +73,15 @@ public class EmployeeController {
         return ApiResponse.success(200, "Employee Deleted successfully.", employeeService.deleteEmployee(employeeCode));
     }
 
+    /**
+     * Publish the message on kafka topic
+     * @param message message to be publish
+     * @return
+     */
+    @PostMapping("/message/publish")
+    @Operation(summary = "Publish the message on kafka", description = "publish the message on kafka topic.")
+    public String publishMessage(@RequestParam String message) {
+        kafkaProducerService.sendMessage(message);
+        return "Message published: " + message;
+    }
 }
