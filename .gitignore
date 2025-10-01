@@ -1,0 +1,31 @@
+# Gradle files
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Gradle caches
+**/.gradle/*
+
+# Maven files (if any)
+target/
+
+# IDE files
+.idea/
+*.iml
+*.ipr
+*.iws
+*.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Flyway output (optional)
+# db/migration/*.sql  # keep if you want migration scripts in Git
+
+# Compiled classes
+**/build/classes/
+**/build/tmp/

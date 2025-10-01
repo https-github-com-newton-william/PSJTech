@@ -11,6 +11,9 @@ jackson = "2.18.1"
 junit = "5.11.3"
 mockito = "5.14.2"
 springdoc = "2.5.0"
+json = "20250517"
+spring-kafka = "3.2.4"
+flyway = "10.21.0"
 
 [libraries]
 spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "spring-boot" }
@@ -19,6 +22,9 @@ spring-boot-starter-validation = { module = "org.springframework.boot:spring-boo
 spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "spring-boot" }
 spring-cloud-starter-openfeign = { module = "org.springframework.cloud:spring-cloud-starter-openfeign", version.ref = "spring-cloud" }
 springdoc-openapi = { module = "org.springdoc:springdoc-openapi-starter-webmvc-ui", version.ref = "springdoc" }
+json = { module = "org.json:json", version.ref = "json" }
+spring-kafka = { module = "org.springframework.kafka:spring-kafka", version.ref = "spring-kafka" }
+flyway-core = { module = "org.flywaydb:flyway-core", version.ref = "flyway" }
 
 mysql-connector = { module = "com.mysql:mysql-connector-j", version.ref = "mysql-connector" }
 hibernate-core = { module = "org.hibernate.orm:hibernate-core", version.ref = "hibernate" }

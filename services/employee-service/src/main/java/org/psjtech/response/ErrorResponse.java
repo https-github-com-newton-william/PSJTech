@@ -1,8 +1,9 @@
 package org.psjtech.response;
 
+import org.json.JSONObject;
+
 import java.time.OffsetDateTime;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Standardized error response returned by all REST APIs.
@@ -23,7 +24,7 @@ public record ErrorResponse(
         String message,
         String requestId,
         List<String> errors,
-        Map<String, Object> errorDetails,
+        JSONObject errorDetails,
         OffsetDateTime timestamp
 ) {
 
@@ -51,19 +52,19 @@ public record ErrorResponse(
     /**
      * Error response with statusCode, errorCode, message and errorDetails
      */
-    public ErrorResponse(int statusCode, String errorCode, String message, Map<String, Object> errorDetails){
+    public ErrorResponse(int statusCode, String errorCode, String message, JSONObject errorDetails){
         this(statusCode, errorCode, message, null, null, errorDetails, OffsetDateTime.now());
     }
 
     /**
-     * Full error response with all fields except timestamp (auto-filled).
+     * Full error response with all fields except timestamp (autofill).
      */
     public ErrorResponse(int statusCode,
                          String errorCode,
                          String message,
                          String requestId,
                          List<String> errors,
-                         Map<String, Object> errorDetails) {
+                         JSONObject errorDetails) {
         this(statusCode, errorCode, message, requestId, errors, errorDetails, OffsetDateTime.now());
     }
 }
