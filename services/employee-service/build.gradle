@@ -25,6 +25,7 @@ dependencies {
     implementation(libs.spring.boot.starter.validation)
     implementation libs.springdoc.openapi
     implementation(libs.json)
+    implementation(libs.flyway.core)
     // Database
     runtimeOnly(libs.mysql.connector)
 
